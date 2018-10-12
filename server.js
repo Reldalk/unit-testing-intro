@@ -5,8 +5,6 @@ const notesRouter = require('./router/notes.router.js');
 const {PORT} = require('./config');
 const app = express();
 
-
-// INSERT EXPRESS APP CODE HERE...
 app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(express.json());
