@@ -11,7 +11,7 @@ app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(express.json());
 
-app.use('/api/notes/', notesRouter);
+app.use('/api/notes', notesRouter);
 
 app.use(function (req, res, next) {
   var err = new Error('Not Found');
