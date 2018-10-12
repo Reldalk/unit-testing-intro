@@ -28,4 +28,12 @@ app.use(function (err, req, res, next) {
 });
 
 
-app.listen(PORT, function (){ console.log(`Your app is listening on port ${PORT}`); });
+if (require.main === module) {
+  app.listen(PORT, function () {
+    console.info(`Server listening on ${this.address().port}`);
+  }).on('error', err => {
+    console.error(err);
+  });
+}
+
+module.exports = app;
